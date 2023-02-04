@@ -1,12 +1,13 @@
 import { View, Text } from "react-native";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const CustomersScreen = () => {
+const OrdersScreen = () => {
   return (
     <SafeAreaView>
-      <Text>CustomersScreen</Text>
+      <Text>OrdersScreen 1: 05 : 32</Text>
     </SafeAreaView>
   );
 };
 
-export default CustomersScreen;
+export default OrdersScreen;
