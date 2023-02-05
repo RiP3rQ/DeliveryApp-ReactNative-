@@ -1,10 +1,11 @@
 import { View, Text } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigator from "./TabNavigator";
+import ModalScreen from "../screens/ModalScreen";
 
 export type RootStackParamList = {
   Main: undefined;
-  MyModal: { userIf: string; name: string };
+  MyModal: { userId: string; name: string };
   Order: { order: any };
 };
 
@@ -17,6 +18,16 @@ const RootNavigator = () => {
         <RootStack.Screen
           name="Main"
           component={TabNavigator}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </RootStack.Group>
+
+      <RootStack.Group screenOptions={{ presentation: "modal" }}>
+        <RootStack.Screen
+          name="MyModal"
+          component={ModalScreen}
           options={{
             headerShown: false,
           }}

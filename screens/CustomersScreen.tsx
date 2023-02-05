@@ -39,11 +39,11 @@ const CustomersScreen = () => {
         />
       </View>
 
-      {data?.getCustomers.map(
-        ({ name: ID, value: { email, name } }: CustomerResponse) => (
+      {data?.getCustomers
+        .filter((customer: CustomerList) => customer.value.name.includes(input))
+        .map(({ name: ID, value: { email, name } }: CustomerResponse) => (
           <CustomerCard key={ID} email={email} name={name} userId={ID} />
-        )
-      )}
+        ))}
     </ScrollView>
   );
 };
