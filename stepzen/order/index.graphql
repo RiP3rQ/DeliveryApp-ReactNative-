@@ -24,5 +24,11 @@ type Query {
   getOrders: [OrderList]
     @rest(
       endpoint: "https://ups-clone-app-5e71d-default-rtdb.firebaseio.com/orders.json"
+      transforms: [{ pathpattern: [], editor: "objectToArray" }]
+    )
+
+  getOrderById(id: ID): Order
+    @rest(
+      endpoint: "https://ups-clone-app-5e71d-default-rtdb.firebaseio.com/orders/$id.json"
     )
 }
