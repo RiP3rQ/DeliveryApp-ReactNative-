@@ -51,7 +51,7 @@ const ModalScreen = () => {
       <FlatList
         className="pb-52"
         data={orders}
-        keyExtractor={(order) => order.trackingId}
+        keyExtractor={(item) => item.trackingId}
         renderItem={({ item: order }) => <DeliveryCard order={order} />}
       />
     </SafeAreaView>

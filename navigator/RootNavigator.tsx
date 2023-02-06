@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigator from "./TabNavigator";
 import ModalScreen from "../screens/ModalScreen";
+import OrderScreen from "../screens/OrderScreen";
 
 export type RootStackParamList = {
   Main: undefined;
@@ -32,6 +33,10 @@ const RootNavigator = () => {
             headerShown: false,
           }}
         />
+      </RootStack.Group>
+
+      <RootStack.Group>
+        <RootStack.Screen name="Order" component={OrderScreen} />
       </RootStack.Group>
     </RootStack.Navigator>
   );

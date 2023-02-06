@@ -46,7 +46,7 @@ const CustomerCard = ({ email, name, userId }: Props) => {
             />
           </View>
         </View>
-        <Card.Divider />
+        <Card.Divider /> 
         <Text>{email}</Text>
       </Card>
     </TouchableOpacity>

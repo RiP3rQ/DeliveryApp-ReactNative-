@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@rneui/base";
 import CustomersScreen from "../screens/CustomersScreen";
 import OrdersScreen from "../screens/OrdersScreen";
+import { Text } from "react-native";
 
 export type TabStackParamList = {
   Customers: undefined;
@@ -49,6 +50,11 @@ const TabNavigator = () => {
         component={OrdersScreen}
         options={{
           headerShown: false,
+          tabBarLabel: ({ focused, color }) => (
+            <Text style={{ color: focused ? "#EB6A7C" : color, fontSize: 10 }}>
+              Orders
+            </Text>
+          ),
         }}
       />
     </Tab.Navigator>
